@@ -1,48 +1,11 @@
-<!DOCTYPE html>
-<html lang="ar">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BLOXSHOP</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <header>
-    <h1>BLOXSHOP</h1>
-    <button id="adminToggle">لوحة التحكم</button>
-  </header>
+<!-- نموذج إضافة المنتج داخل لوحة الأدمن -->
+<div id="addProductBox" class="admin-box hidden">
+  <h3>إضافة منتج جديد</h3>
+  <input type="text" id="productName" placeholder="اسم المنتج" />
+  <input type="number" id="productPrice" placeholder="السعر" />
+  <input type="text" id="productImage" placeholder="رابط الصورة" />
+  <button onclick="addProduct()">إضافة المنتج</button>
+</div>
 
-  <main>
-    <section id="product-list" class="grid"></section>
-
-    <section id="admin-panel" class="hidden">
-      <h2>إضافة منتج جديد</h2>
-      <form id="product-form">
-        <input type="text" id="name" placeholder="اسم المنتج" required />
-        <input type="number" id="price" placeholder="السعر" required />
-        <input type="text" id="image" placeholder="رابط الصورة" required />
-        <button type="submit">إضافة</button>
-      </form>
-    </section>
-  </main>
-
-  <script src="script.js"></script>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="ar">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>BLOXSHOP - سجل الطلبات</title>
-  <style>
-    body { font-family: Arial; direction: rtl; background: #f8f8f8; padding: 20px; }
-    #adminPanel { display: none; margin-top: 20px; }
-    .order { background: white; padding: 10px; border: 1px solid #ccc; margin-bottom: 10px; }
-    .btn { padding: 5px 10px; margin-left: 5px; cursor: pointer; border: none; border-radius: 4px; }
-    .accept { background-color: #4CAF50; color: white; }
-    .cancel { background-color: #f44336; color: white; }
-    #login { margin-top: 20px; }
-  </style>
-</head>
-<body>
+<!-- زر لإظهار نموذج إضافة المنتج -->
+<button onclick="toggleAddProductForm()" id="addProductButton">إضافة منتج جديد</button>
