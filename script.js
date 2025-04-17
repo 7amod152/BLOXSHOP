@@ -1,1 +1,43 @@
-console.log('BloxShop is ready');
+body {
+  direction: rtl;
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f0f0f0;
+}
+header {
+  background: #4b0082;
+  color: white;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+}
+.product {
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 0 5px #ccc;
+}
+.product img {
+  max-width: 100%;
+  height: auto;
+}
+.hidden {
+  display: none;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem;
+}
+input, button {
+  padding: 0.5rem;
+  font-size: 1rem;
+}
