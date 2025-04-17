@@ -35,8 +35,6 @@ document.getElementById("adminToggle").addEventListener("click", () => {
 renderProducts();
 // بيانات طلبات وهمية – تقدر تستبدلها بالطلبات الحقيقية
 const orders = [
-  { id: 1, product: "بطاقة روبلوكس", user: "أحمد" },
-  { id: 2, product: "سكن نادر", user: "سارة" },
 ];
 
 // عرض الطلبات
@@ -121,7 +119,7 @@ function updateOrder(index, newStatus) {
 }
 // الأدمنات
 let admins = JSON.parse(localStorage.getItem("admins")) || [
-  { username: "admin1", password: "pass1", isMain: true }
+  { username: "moha", password: "kehili", isMain: true }
 ];
 
 let currentAdmin = null;
