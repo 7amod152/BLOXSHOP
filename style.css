@@ -66,3 +66,52 @@ input, button {
 .order-actions button {
   margin-left: 10px;
 }
+body {
+  font-family: Arial, sans-serif;
+  background-image: url('https://www.robloxs.com/wp-content/uploads/2021/02/Roblox-game-background.png'); /* صورة خلفية مستوحاة من Roblox */
+  background-size: cover; /* تغطية الشاشة بالكامل */
+  background-position: center center; /* تموضع الصورة في المنتصف */
+  background-attachment: fixed; /* تثبيت الخلفية أثناء التمرير */
+  color: white; /* لون النص الأبيض */
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  padding: 20px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 36px;
+  margin-top: 30px;
+}
+
+.btn {
+  padding: 12px 24px;
+  background-color: #4CAF50; /* زر خلفية خضراء */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  margin: 10px;
+}
+
+.btn:hover {
+  background-color: #45a049; /* تغيير اللون عند التمرير */
+}
+
+.product-card {
+  background-color: rgba(255, 255, 255, 0.8); /* خلفية شبه شفافة للمنتجات */
+  padding: 15px;
+  margin: 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
