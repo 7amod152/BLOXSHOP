@@ -33,3 +33,39 @@ document.getElementById("adminToggle").addEventListener("click", () => {
 });
 
 renderProducts();
+// بيانات طلبات وهمية – تقدر تستبدلها بالطلبات الحقيقية
+const orders = [
+  { id: 1, product: "بطاقة روبلوكس", user: "أحمد" },
+  { id: 2, product: "سكن نادر", user: "سارة" },
+];
+
+// عرض الطلبات
+function displayOrders() {
+  const orderList = document.getElementById("orderList");
+  orderList.innerHTML = "";
+
+  orders.forEach((order) => {
+    const li = document.createElement("li");
+    li.innerHTML = `
+      <span>طلب رقم #${order.id}: ${order.product} – ${order.user}</span>
+      <span class="order-actions">
+        <button onclick="markAsReceived(${order.id})">استلام</button>
+        <button onclick="cancelOrder(${order.id})">إلغاء</button>
+      </span>
+    `;
+    orderList.appendChild(li);
+  });
+}
+
+function markAsReceived(orderId) {
+  alert("تم استلام الطلب #" + orderId);
+  // تقدر تحدث الطلب في قاعدة بيانات أو localStorage هنا
+}
+
+function cancelOrder(orderId) {
+  alert("تم إلغاء الطلب #" + orderId);
+  // نفس الشي هنا، احذف الطلب من البيانات
+}
+
+// تشغيل عند تحميل الصفحة
+document.addEventListener("DOMContentLoaded", displayOrders);
