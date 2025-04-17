@@ -1,32 +1,30 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BLOXSHOP - متجر روبلوكس</title>
-  <link rel="stylesheet" href="styles.css" />
+  <title>BLOXSHOP</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
     <h1>BLOXSHOP</h1>
-    <nav>
-      <ul>
-        <li><a href="#">الصفحة الرئيسية</a></li>
-        <li><a href="#">منتجاتنا</a></li>
-        <li><a href="#">لوحة التحكم</a></li>
-      </ul>
-    </nav>
+    <button id="adminToggle">لوحة التحكم</button>
   </header>
 
   <main>
-    <section class="product-grid">
-      <!-- يتم ملء المنتجات تلقائيًا عبر JavaScript -->
+    <section id="product-list" class="grid"></section>
+
+    <section id="admin-panel" class="hidden">
+      <h2>إضافة منتج جديد</h2>
+      <form id="product-form">
+        <input type="text" id="name" placeholder="اسم المنتج" required />
+        <input type="number" id="price" placeholder="السعر" required />
+        <input type="text" id="image" placeholder="رابط الصورة" required />
+        <button type="submit">إضافة</button>
+      </form>
     </section>
   </main>
-
-  <footer>
-    <p>© 2025 BLOXSHOP جميع الحقوق محفوظة</p>
-  </footer>
 
   <script src="script.js"></script>
 </body>
