@@ -69,3 +69,52 @@ function cancelOrder(orderId) {
 
 // تشغيل عند تحميل الصفحة
 document.addEventListener("DOMContentLoaded", displayOrders);
+// بيانات تسجيل دخول بسيطة (يمكن تغييرها)
+const ADMIN_USERNAME = "admin";
+const ADMIN_PASSWORD = "1234";
+
+// بيانات الطلبات الوهمية (يمكنك تعديلها أو جعلها فارغة كبداية)
+let orders = JSON.parse(localStorage.getItem("orders")) || [
+  { id: 1, name: "منتج 1", status: "قيد المعالجة" },
+  { id: 2, name: "منتج 2", status: "قيد المعالجة" }
+];
+
+// التحقق من تسجيل الدخول
+function checkAdmin() {
+  const username = document.getElementById("adminUsername").value;
+  const password = document.getElementById("adminPassword").value;
+
+  if (username === ADMIN_USERNAME && password === ADMIN_PASSWORD) {
+    document.getElementById("login").style.display = "none";
+    document.getElementById("adminPanel").style.display = "block";
+    showOrders();
+  } else {
+    alert("بيانات الدخول غير صحيحة");
+  }
+}
+
+// عرض الطلبات
+function showOrders() {
+  const ordersContainer = document.getElementById("orders");
+  ordersContainer.innerHTML = "";
+
+  orders.forEach((order, index) => {
+    const div = document.createElement("div");
+    div.className = "order";
+    div.innerHTML = `
+      <strong>رقم الطلب:</strong> ${order.id}<br>
+      <strong>المنتج:</strong> ${order.name}<br>
+      <strong>الحالة:</strong> ${order.status}<br>
+      <button class="btn accept" onclick="updateOrder(${index}, 'تم الاستلام')">استلام الطلب</button>
+      <button class="btn cancel" onclick="updateOrder(${index}, 'تم الإلغاء')">إلغاء الطلب</button>
+    `;
+    ordersContainer.appendChild(div);
+  });
+}
+
+// تحديث حالة الطلب
+function updateOrder(index, newStatus) {
+  orders[index].status = newStatus;
+  localStorage.setItem("orders", JSON.stringify(orders));
+  showOrders();
+}
