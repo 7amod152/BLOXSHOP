@@ -1,0 +1,1 @@
+console.log('BloxShop is ready');
