@@ -115,3 +115,34 @@ h2 {
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 20px;
 }
+body {
+  font-family: Arial, sans-serif;
+  background-image: url('https://www.robloxs.com/wp-content/uploads/2021/02/Roblox-game-background.png'); /* خلفية مستوحاة من روبلوكس */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: white;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.welcome {
+  text-align: center;
+}
+
+.btn {
+  padding: 15px 25px;
+  background-color: #4CAF50;
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  border-radius: 5px;
+}
+
+.btn:hover {
+  background-color: #45a049;
+}
