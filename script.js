@@ -120,6 +120,7 @@ function updateOrder(index, newStatus) {
 // الأدمنات
 let admins = JSON.parse(localStorage.getItem("admins")) || [
   { username: "moha", password: "kehili", isMain: true }
+    { username: "kehili2009", password: "kehili----2009", isMain: true } // أدمن إضافي (أنت)
 ];
 
 let currentAdmin = null;
