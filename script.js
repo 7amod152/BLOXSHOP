@@ -1,43 +1,35 @@
-body {
-  direction: rtl;
-  font-family: sans-serif;
-  margin: 0;
-  padding: 0;
-  background: #f0f0f0;
+const products = [
+  { name: "منتج 1", price: 50, image: "https://via.placeholder.com/150" },
+  { name: "منتج 2", price: 100, image: "https://via.placeholder.com/150" },
+];
+
+function renderProducts() {
+  const container = document.getElementById("product-list");
+  container.innerHTML = "";
+  products.forEach((p) => {
+    const div = document.createElement("div");
+    div.className = "product";
+    div.innerHTML = `
+      <img src="${p.image}" alt="${p.name}" />
+      <h3>${p.name}</h3>
+      <p>${p.price} ر.س</p>
+    `;
+    container.appendChild(div);
+  });
 }
-header {
-  background: #4b0082;
-  color: white;
-  padding: 1rem;
-  display: flex;
-  justify-content: space-between;
-}
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1rem;
-  padding: 1rem;
-}
-.product {
-  background: white;
-  padding: 1rem;
-  border-radius: 8px;
-  box-shadow: 0 0 5px #ccc;
-}
-.product img {
-  max-width: 100%;
-  height: auto;
-}
-.hidden {
-  display: none;
-}
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  padding: 1rem;
-}
-input, button {
-  padding: 0.5rem;
-  font-size: 1rem;
-}
+
+document.getElementById("product-form").addEventListener("submit", function (e) {
+  e.preventDefault();
+  const name = document.getElementById("name").value;
+  const price = parseFloat(document.getElementById("price").value);
+  const image = document.getElementById("image").value;
+  products.push({ name, price, image });
+  renderProducts();
+  this.reset();
+});
+
+document.getElementById("adminToggle").addEventListener("click", () => {
+  document.getElementById("admin-panel").classList.toggle("hidden");
+});
+
+renderProducts();
