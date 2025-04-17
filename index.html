@@ -29,8 +29,36 @@
   <script src="script.js"></script>
 </body>
 </html>
-<!-- سجل الطلبات -->
-<section id="order-log" class="order-log">
-  <h2>سجل الطلبات</h2>
-  <ul id="orderList"></ul>
-</section>
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BLOXSHOP - سجل الطلبات</title>
+  <style>
+    body { font-family: Arial; direction: rtl; background: #f8f8f8; padding: 20px; }
+    #adminPanel { display: none; margin-top: 20px; }
+    .order { background: white; padding: 10px; border: 1px solid #ccc; margin-bottom: 10px; }
+    .btn { padding: 5px 10px; margin-left: 5px; cursor: pointer; border: none; border-radius: 4px; }
+    .accept { background-color: #4CAF50; color: white; }
+    .cancel { background-color: #f44336; color: white; }
+    #login { margin-top: 20px; }
+  </style>
+</head>
+<body>
+
+  <h2>تسجيل دخول الأدمن</h2>
+  <div id="login">
+    <input type="text" id="adminUsername" placeholder="اسم الأدمن" />
+    <input type="password" id="adminPassword" placeholder="كلمة المرور" />
+    <button onclick="checkAdmin()">دخول</button>
+  </div>
+
+  <div id="adminPanel">
+    <h2>سجل الطلبات</h2>
+    <div id="orders"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
