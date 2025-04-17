@@ -47,15 +47,41 @@
 </head>
 <body>
 
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BLOXSHOP - لوحة الأدمن</title>
+  <style>
+    body { font-family: Arial; direction: rtl; background: #f8f8f8; padding: 20px; }
+    .hidden { display: none; }
+    .order, .admin-box { background: white; padding: 10px; border: 1px solid #ccc; margin-bottom: 10px; }
+    .btn { padding: 5px 10px; margin-left: 5px; cursor: pointer; border: none; border-radius: 4px; }
+    .accept { background-color: #4CAF50; color: white; }
+    .cancel { background-color: #f44336; color: white; }
+  </style>
+</head>
+<body>
+
   <h2>تسجيل دخول الأدمن</h2>
-  <div id="login">
+  <div id="loginBox">
     <input type="text" id="adminUsername" placeholder="اسم الأدمن" />
     <input type="password" id="adminPassword" placeholder="كلمة المرور" />
     <button onclick="checkAdmin()">دخول</button>
   </div>
 
-  <div id="adminPanel">
-    <h2>سجل الطلبات</h2>
+  <div id="adminPanel" class="hidden">
+    <h2>مرحباً <span id="adminName"></span></h2>
+    
+    <div id="addAdminBox" class="admin-box hidden">
+      <h3>إضافة أدمن جديد</h3>
+      <input type="text" id="newAdminUser" placeholder="اسم الأدمن الجديد" />
+      <input type="password" id="newAdminPass" placeholder="كلمة المرور" />
+      <button onclick="addNewAdmin()">إضافة</button>
+    </div>
+
+    <h3>سجل الطلبات</h3>
     <div id="orders"></div>
   </div>
 
