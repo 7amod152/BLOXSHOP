@@ -41,3 +41,28 @@ input, button {
   padding: 0.5rem;
   font-size: 1rem;
 }
+.order-log {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+}
+
+.order-log h2 {
+  margin-bottom: 15px;
+  color: #333;
+}
+
+#orderList li {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.order-actions button {
+  margin-left: 10px;
+}
